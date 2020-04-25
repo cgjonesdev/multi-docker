@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVerion": 2,
+  "containerDefinitions": [
+    {
+      "name": "nginx",
+      "image": "cgjonesdev/multi-nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "server"]
+    },
+    {
+      "name": "client",
+      "image": "cgjonesdev/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "cgjonesdev/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "cgjonesdev/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    }
+  ]
+}

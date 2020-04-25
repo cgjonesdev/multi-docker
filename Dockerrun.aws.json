@@ -4,6 +4,7 @@
     {
       "name": "nginx",
       "image": "cgjonesdev/multi-nginx",
+      "memory": 128,
       "essential": true,
       "portMappings": [
         {
@@ -16,18 +17,21 @@
     {
       "name": "client",
       "image": "cgjonesdev/multi-client",
+      "memory": 128,
       "hostname": "client",
       "essential": false
     },
     {
       "name": "server",
       "image": "cgjonesdev/multi-server",
+      "memory": 128,
       "hostname": "api",
       "essential": false
     },
     {
       "name": "worker",
       "image": "cgjonesdev/multi-worker",
+      "memory": 128,
       "hostname": "worker",
       "essential": false
     }
